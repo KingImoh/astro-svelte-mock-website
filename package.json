@@ -1,0 +1,42 @@
+{
+  "name": "@astro-svelte-mock",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "build-staging": "astro build --mode staging",
+    "build-production": "astro build",
+    "preview": "astro preview",
+    "p-build": "astro build && astro preview",
+    "p-staging": "astro build --mode staging && astro preview",
+    "astro": "astro",
+    "lint": "prettier --check . && eslint .",
+    "format": "prettier --plugin-search-dir . --write ."
+  },
+  "dependencies": {
+    "@astrojs/node": "^6.0.3",
+    "@astrojs/svelte": "^4.0.0",
+    "@melt-ui/svelte": "^0.10.3",
+    "@splidejs/splide": "^4.1.4",
+    "@splidejs/svelte-splide": "^0.2.9",
+    "astro": "^3.0.8",
+    "svelte": "^3.59.1"
+  },
+  "devDependencies": {
+    "@iconify/json": "^2.2.64",
+    "@typescript-eslint/eslint-plugin": "^5.59.5",
+    "@typescript-eslint/parser": "^5.59.5",
+    "@unocss/preset-mini": "^0.51.12",
+    "@unocss/reset": "^0.51.12",
+    "eslint": "^8.40.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-astro": "^0.27.0",
+    "eslint-plugin-svelte3": "^4.0.0",
+    "prettier": "^2.8.8",
+    "prettier-plugin-astro": "^0.8.1",
+    "prettier-plugin-svelte": "^2.10.0",
+    "unocss": "^0.51.12"
+  }
+}

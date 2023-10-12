@@ -1,0 +1,55 @@
+---
+// import { ViewTransitions } from "astro:transitions";
+
+export interface Props {
+  title?: string;
+  layoutStyle?: string;
+}
+const { title = "", layoutStyle = "" } = Astro.props as Props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="author" content="IM0H" />
+    <!-- <meta name="theme-color" content="#101011" /> -->
+    <meta property="og:title" content={title} />
+    <meta property="og:type" content="website" />
+    <title>Mock Website</title>
+  </head>
+  <body>
+    <div
+      id="app"
+      class:list={[
+        "relative font-primary text-lg overflow-x-hidden bg-orange h-screen",
+        layoutStyle,
+      ]}
+    >
+      <main class="relative pt-25 mx-auto p-10 print:pt-10">
+        <slot />
+      </main>
+    </div>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      img,
+      video,
+      svg,
+      picture {
+        max-width: 100%;
+        display: block;
+      }
+      .bg404 {
+        background-image: url("/src/assets/images/404/bg.webp");
+        background-size: auto;
+      }
+    </style>
+    <!-- Cookie Request -->
+  </body>
+</html>

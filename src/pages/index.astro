@@ -1,0 +1,64 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import Render from "~/components/Render.svelte";
+
+const sections = {
+  section: [
+    {
+      bgColor: "",
+      customBgColor: "",
+      title: "",
+      content: "",
+      bgImage: "",
+      card: "",
+      id: "",
+      displayType: "",
+    },
+  ],
+  errors: "",
+};
+---
+
+<Layout title="Home">
+  <h1 class="text-5xl font-bold">Hello World!</h1>
+  <div class="text-3xl">this website is:</div>
+  <ol class="list-roman list-inside p-5">
+    <li>
+      Tryna show that Svelte components, which work fine, when imported scream
+      at me as .tsx files as seen in the index and that's not cool.
+    </li>
+    <li>
+      Also, that I can't use TS functionality in Svelte components, without it
+      breaking as shown in the Render component.
+      <p class="text-sm">
+        N/B: to see what I mean, kindly comment out the <code
+          >export let section= {"{}"}</code
+        > line in the Render component and uncomment the <code
+          >export let section: any = {"{}"}</code
+        > line and see the <span class="text-blue font-bold">error</span> appear.
+      </p>
+    </li>
+  </ol>
+
+  <div class="mt-20">
+    <div>
+      I need your help. Thanks in advance, when your able to sort it out let me
+      know. Click <a
+        class="animate-bounce animate-count-infinite inline-block font-bold underline underline-sec"
+        href="https://discord.com/channels/830184174198718474/1161632552784777266"
+        >Astro rocks!!</a
+      >
+    </div>
+    <p class="animate-hinge">
+      hopefully it shows on your machine as it does on mine
+    </p>
+  </div>
+
+  {
+    !sections.errors
+      ? sections.section.map((section: any) => {
+          return <Render {section} client:visible />;
+        })
+      : ""
+  }
+</Layout>
